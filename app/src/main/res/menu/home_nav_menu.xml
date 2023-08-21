@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_quran"
+        android:icon="@drawable/quran"
+        android:title="@string/quran" />
+
+    <item
+        android:id="@+id/nav_hadeeth"
+        android:icon="@drawable/hadeeth"
+        android:title="@string/hadeeth" />
+
+    <item
+        android:id="@+id/nav_sebha"
+        android:icon="@drawable/sebha"
+        android:title="@string/tasbeeh" />
+
+    <item
+        android:id="@+id/nav_radio"
+        android:icon="@drawable/radio_blue"
+        android:title="@string/radio" />
+
+</menu>
