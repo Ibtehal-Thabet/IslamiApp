@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:adjustViewBounds="true"
+        android:layoutDirection="ltr"
         android:src="@drawable/head_of_seb7a"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

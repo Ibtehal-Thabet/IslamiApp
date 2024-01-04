@@ -19,7 +19,8 @@ class HadeethNameRecyclerAdapter(private var items: List<Hadeeth>?) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.viewBinding.title.text = items!![position].title
-        if (onItemClickListener != null) {
+
+        onItemClickListener.let {
             holder.viewBinding.root
                 .setOnClickListener {
                     onItemClickListener?.onItemClick(position, items!![position])
