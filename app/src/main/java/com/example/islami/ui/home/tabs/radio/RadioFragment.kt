@@ -12,6 +12,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.islami.R
@@ -182,6 +183,7 @@ class RadioFragment : Fragment(), ActionPlaying {
                     Log.e("response", response.body()?.radios.toString())
                     val channels = response.body()?.radios
                     adapter.bindChannel(channels)
+                    viewBinding.progressBar.isVisible = false
                 }
 
                 override fun onFailure(call: Call<RadioResponse>, t: Throwable) {
