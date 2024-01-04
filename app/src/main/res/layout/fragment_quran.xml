@@ -16,6 +16,60 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.4" />
 
+    <View
+        android:id="@+id/hadeeth_line_1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/header_image" />
+
+
+    <View
+        android:id="@+id/hadeeth_line_2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/suras_layout" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@id/hadeeth_line_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_image" />
+
+    <LinearLayout
+        android:id="@+id/suras_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hadeeth_line_1">
+
+        <TextView
+            android:id="@+id/suras_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/elmessiri_semi_bold"
+            android:gravity="center"
+            android:text="@string/alsuwar"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/verses_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/elmessiri_semi_bold"
+            android:gravity="center"
+            android:text="@string/verses_number"
+            android:textSize="25sp" />
+
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
@@ -23,7 +77,7 @@
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header_image"
+        app:layout_constraintTop_toBottomOf="@id/hadeeth_line_2"
         tools:listitem="@layout/item_chapter_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

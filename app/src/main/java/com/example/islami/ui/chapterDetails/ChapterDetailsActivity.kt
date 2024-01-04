@@ -1,7 +1,10 @@
 package com.example.islami.ui.chapterDetails
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import com.example.islami.R
 import com.example.islami.databinding.ActivitySurasDetailsBinding
 import com.example.islami.ui.Constants
 
@@ -15,6 +18,11 @@ class ChapterDetailsActivity : AppCompatActivity() {
         initParma()
         initViews()
         readFile()
+        if (resources.configuration!!.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_NO) {
+            viewBinding.mainLayout.background = ContextCompat.getDrawable(this, R.drawable.main_bg)
+        } else {
+            viewBinding.mainLayout.background = ContextCompat.getDrawable(this, R.drawable.dark_bg)
+        }
     }
 
     private fun initViews() {
@@ -22,7 +30,7 @@ class ChapterDetailsActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.title = ""
-        viewBinding.titleTv.text = chapterName
+        viewBinding.titleTv.text = "سورة " + chapterName
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -41,12 +49,16 @@ class ChapterDetailsActivity : AppCompatActivity() {
     private fun readFile() {
         val fileContent = assets.open("$chapterIndex.txt").bufferedReader().use { it.readText() }
         val lines = fileContent.trim().split("\n")
-        bindVerses(lines)
+        val ayatArr = mutableListOf<Int>()
+        for (i in lines.indices) {
+            ayatArr.add(i + 1)
+        }
+        bindVerses(lines, ayatArr)
     }
 
     lateinit var adapter: VersesAdapter
-    private fun bindVerses(lines: List<String>) {
-        adapter = VersesAdapter(lines)
+    private fun bindVerses(lines: List<String>, ayatNumbers: List<Int>) {
+        adapter = VersesAdapter(lines, ayatNumbers)
         viewBinding.suraContent.versesRv.adapter = adapter
     }
 }

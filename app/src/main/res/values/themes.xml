@@ -13,4 +13,32 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <drawable name="splash_bg">
+        <item name="android:src">@drawable/splash_screen</item>
+    </drawable>
+
+    <drawable name="background">
+        <item name="android:src">@drawable/main_bg</item>
+    </drawable>
+
+    <drawable name="play1">
+        <item name="android:src">@drawable/play</item>
+    </drawable>
+
+    <drawable name="play_next_1">
+        <item name="android:src">@drawable/play_next</item>
+    </drawable>
+
+    <drawable name="play_previous_1">
+        <item name="android:src">@drawable/play_previous</item>
+    </drawable>
+
+    <drawable name="stop">
+        <item name="android:src">@drawable/ic_stop_light</item>
+    </drawable>
+
+    <drawable name="modeImage">
+        <item name="android:src">@drawable/ic_light_mode</item>
+    </drawable>
 </resources>

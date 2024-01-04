@@ -5,7 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.islami.databinding.ItemChapterNameBinding
 
-class ChapterNameRecyclerAdapter(private val names: List<String>) :
+class ChapterNameRecyclerAdapter(
+    private val names: List<String>,
+    private val verses: List<String>
+) :
     RecyclerView.Adapter<ChapterNameRecyclerAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -18,10 +21,11 @@ class ChapterNameRecyclerAdapter(private val names: List<String>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.viewBinding.title.text = names[position]
+        holder.viewBinding.number.text = verses[position]
         if (onItemClickListener != null) {
             holder.viewBinding.root
                 .setOnClickListener {
-                    onItemClickListener?.onItemClick(position, names[position])
+                    onItemClickListener?.onItemClick(position, names[position], verses[position])
                 }
         }
     }
@@ -31,7 +35,7 @@ class ChapterNameRecyclerAdapter(private val names: List<String>) :
     var onItemClickListener: OnItemClickListener? = null
 
     fun interface OnItemClickListener {
-        fun onItemClick(position: Int, name: String)
+        fun onItemClick(position: Int, name: String, verses: String)
     }
 
     class ViewHolder(val viewBinding: ItemChapterNameBinding) :

@@ -3,14 +3,14 @@ package com.example.islami.ui.home.tabs.hadeeth
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.islami.databinding.ItemChapterNameBinding
+import com.example.islami.databinding.ItemHadeethBinding
 import com.example.islami.ui.model.Hadeeth
 
 class HadeethNameRecyclerAdapter(private var items: List<Hadeeth>?) :
     RecyclerView.Adapter<HadeethNameRecyclerAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val viewBinding = ItemChapterNameBinding.inflate(
+        val viewBinding = ItemHadeethBinding.inflate(
             LayoutInflater.from(parent.context),
             parent, false
         )
@@ -41,6 +41,6 @@ class HadeethNameRecyclerAdapter(private var items: List<Hadeeth>?) :
         fun onItemClick(position: Int, item: Hadeeth)
     }
 
-    class ViewHolder(val viewBinding: ItemChapterNameBinding) :
+    class ViewHolder(val viewBinding: ItemHadeethBinding) :
         RecyclerView.ViewHolder(viewBinding.root) {}
 }

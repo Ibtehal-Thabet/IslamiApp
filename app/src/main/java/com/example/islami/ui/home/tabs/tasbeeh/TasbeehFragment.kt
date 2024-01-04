@@ -1,10 +1,12 @@
 package com.example.islami.ui.home.tabs.tasbeeh
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.islami.R
 import com.example.islami.databinding.FragmentTasbeehBinding
 import com.example.islami.ui.Constants
 
@@ -28,11 +30,19 @@ class TasbeehFragment : Fragment() {
         viewBinding.sebhaNumber.text = "$counter"
         viewBinding.sebhaTV.text = Constants.TASBEEH
 
+        if (resources.configuration!!.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_NO) {
+            viewBinding.sebhaHeadImage.setImageResource(R.drawable.head_of_seb7a)
+            viewBinding.sebhaImage.setImageResource(R.drawable.body_of_seb7a)
+        } else {
+            viewBinding.sebhaHeadImage.setImageResource(R.drawable.head_of_seb7a_dark)
+            viewBinding.sebhaImage.setImageResource(R.drawable.body_of_seb7a_dark)
+        }
+
         onClickSeb7a()
     }
 
     private fun onClickSeb7a() {
-        viewBinding.sebhaNumber.setOnClickListener {
+        viewBinding.sebhaImage.setOnClickListener {
             seb7aImageRotation()
             changeCounter()
         }

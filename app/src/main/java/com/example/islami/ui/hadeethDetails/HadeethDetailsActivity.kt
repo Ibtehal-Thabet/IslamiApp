@@ -1,8 +1,11 @@
 package com.example.islami.ui.hadeethDetails
 
+import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import com.example.islami.R
 import com.example.islami.databinding.ActivityHadeethDetailsBinding
 import com.example.islami.ui.Constants
 import com.example.islami.ui.model.Hadeeth
@@ -18,6 +21,11 @@ class HadeethDetailsActivity : AppCompatActivity() {
         initViews()
         initParams()
         bindHadeeth()
+        if (resources.configuration!!.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_NO) {
+            viewBinding.mainLayout.background = ContextCompat.getDrawable(this, R.drawable.main_bg)
+        } else {
+            viewBinding.mainLayout.background = ContextCompat.getDrawable(this, R.drawable.dark_bg)
+        }
     }
 
     private fun initViews() {

@@ -11,6 +11,7 @@
         android:id="@+id/suraCardView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:backgroundTint="@color/detailsCardColor"
         android:elevation="24dp"
         app:cardCornerRadius="24dp"
         app:contentPadding="8dp"
@@ -32,7 +33,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:fontFamily="@font/dthuluth"
+                android:textColor="@color/textColor"
                 android:textSize="26sp" />
+
         </androidx.core.widget.NestedScrollView>
     </androidx.cardview.widget.CardView>
 

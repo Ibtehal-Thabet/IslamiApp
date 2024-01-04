@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FACC1D</color>
+    <color name="textColor">#FFFFFFFF</color>
+    <color name="bottomNavColor">#141A2E</color>
+    <color name="detailsCardColor">#141A2E</color>
+    <color name="selectedItemColor">#FACC1D</color>
+
+</resources>

@@ -21,7 +21,7 @@
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/bottomNavColor"
         app:itemIconSize="32dp"
         app:itemIconTint="@color/home_nav_item_color"
         app:itemTextColor="@color/home_nav_item_color"
