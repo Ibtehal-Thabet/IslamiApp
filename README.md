@@ -3,5 +3,3 @@ The skills and techniques used:
 - MVC
 - Broadcasting receiver
 - Notifications
-
-<img src="IslamiApp.mp4" width="200">
